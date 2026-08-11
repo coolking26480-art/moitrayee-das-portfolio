@@ -106,13 +106,13 @@ export default function HomePanel({ onNavigate }: HomePanelProps) {  return (
 
                 <div className="border-l border-slate-200 px-5 py-6">
                   <p className="text-[30px] font-semibold tracking-tight text-slate-900">
-                    Ph.D.
+                    200+
                   </p>
 
                   <p className="mt-2 text-[10px] font-medium uppercase leading-5 tracking-[0.14em] text-slate-500">
-                    TISS
+                    Research
                     <br />
-                    Mumbai
+                    Publications
                   </p>
                 </div>
               </div>
