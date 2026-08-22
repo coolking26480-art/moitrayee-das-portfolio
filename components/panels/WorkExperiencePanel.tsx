@@ -158,7 +158,7 @@ export default function WorkExperiencePanel() {
                 items={[
                   "Delivered over 100 outreach sessions on mental health awareness, advocacy, psychological well-being, leadership, and workplace mental health to students, parents, teachers, counselors, school leaders, principals, government officials, and other educational stakeholders.",
                   "Delivered 25+ invited talks across universities, government organizations, and industry.",
-                  "Organized two national-level psychology conferences at FLAME University, Pune.",
+                  "Organized three national-level psychology conferences at FLAME University, Pune.",
                   "Guest Editor, July 2026 Special Issue of the National HRD Network Journal on the theme ‘Overwork Culture in Today’s Organizations: Current State and Future Perspectives.’",
                   "Conducted Faculty Development Programs (FDPs) and Executive Education Programs.",
                 ]}

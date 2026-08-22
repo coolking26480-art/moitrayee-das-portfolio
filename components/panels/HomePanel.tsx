@@ -1,11 +1,12 @@
 interface HomePanelProps {
   onNavigate: (target: string) => void;
 }
+
+import { BriefcaseBusiness, Landmark } from "lucide-react";
+
 export default function HomePanel({ onNavigate }: HomePanelProps) {  return (
     <div className="min-h-full bg-white text-slate-900">
-      {/* =========================================================
-          HERO
-      ========================================================= */}
+      
             {/* =========================================================
           HERO
       ========================================================= */}
@@ -14,68 +15,68 @@ export default function HomePanel({ onNavigate }: HomePanelProps) {  return (
           <div className="grid items-stretch gap-8 lg:grid-cols-[0.82fr_1.5fr_0.82fr] xl:gap-10">
 
             {/* =====================================================
-                LEFT: PORTRAIT CARD
-            ===================================================== */}
-            <div className="order-2 lg:order-1">
-              <div className="flex h-full min-h-[580px] flex-col rounded-xl border border-slate-200 bg-slate-50/50 px-8 py-8 shadow-[0_4px_20px_rgba(15,23,42,0.04)] md:px-10">
-                
-                {/* Portrait area */}
-                <div className="flex flex-1 items-center justify-center">
-                  <div className="text-center">
-                    <div className="mx-auto flex h-28 w-28 items-center justify-center rounded-full border border-slate-200 bg-slate-100 text-2xl font-medium text-slate-500">
-                      MD
-                    </div>
+    LEFT: PORTRAIT CARD
+===================================================== */}
+<div className="order-2 self-start lg:order-1">
+  <div className="flex flex-col rounded-xl border border-slate-200 bg-slate-50/50 px-8 py-8 shadow-[0_4px_20px_rgba(15,23,42,0.04)] md:px-10">
 
-                    <p className="mt-6 text-xs font-medium uppercase tracking-[0.16em] text-slate-500">
-                      Portrait
-                    </p>
-                  </div>
-                </div>
+    {/* Portrait area */}
+    <div className="flex items-center justify-center pb-6">
+      <div className="w-full max-w-[280px] text-center">
+        <div className="overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
+          <img
+            src="/images/home/head.jpeg"
+            alt="Dr. Moitrayee Das"
+            className="h-[380px] w-full object-cover"
+          />
+        </div>
 
-                {/* Identity */}
-                <div className="pt-10">
-                  <div className="mb-7 h-px w-12 bg-blue-700" />
+      </div>
+    </div>
 
-                  <h1 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-[26px]">
-                    Dr. Moitrayee Das
-                  </h1>
+    {/* Identity */}
+    <div className="pt-2">
+      <div className="mb-7 h-px w-12 bg-blue-700" />
 
-                  <p className="mt-3 max-w-[240px] text-xs font-medium uppercase leading-6 tracking-[0.16em] text-slate-500">
-                    Assistant Professor of Psychology
-                  </p>
-                </div>
-              </div>
-            </div>
+      <h1 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-[26px]">
+        Dr. Moitrayee Das
+      </h1>
 
+      <p className="mt-3 max-w-[240px] text-xs font-medium uppercase leading-6 tracking-[0.16em] text-slate-500">
+        Assistant Professor of Psychology
+      </p>
+    </div>
+
+  </div>
+</div>
             {/* =====================================================
                 CENTER: INTRODUCTION
             ===================================================== */}
             <div className="order-1 flex flex-col justify-center lg:order-2">
-              
-              <p className="text-xs font-medium uppercase tracking-[0.22em] text-blue-700">
-                Understanding
-              </p>
 
-              <h2 className="mt-5 text-[58px] font-semibold leading-[0.94] tracking-[-0.04em] text-slate-900 sm:text-[64px] lg:text-[60px] xl:text-[68px]">
-                The Mind
-                <br />
-                <span className="font-normal text-blue-800">
-                  at Work
-                </span>
-              </h2>
+  <div className="flex items-center gap-5">
+    <span className="h-px w-9 shrink-0 bg-blue-700" />
 
-              <div className="mt-8 flex items-center gap-5">
-                <span className="h-px w-9 shrink-0 bg-blue-700" />
+    <span className="text-xs font-medium uppercase tracking-[0.15em] text-slate-500">
+      Psychology · Research · Mental Health
+    </span>
+  </div>
 
-                <span className="text-xs font-medium uppercase tracking-[0.15em] text-slate-500">
-                  Psychology · Work · Well-being
-                </span>
-              </div>
+  <h2 className="mt-5 text-[58px] font-semibold leading-[0.94] tracking-[-0.04em] text-slate-900 sm:text-[64px] lg:text-[60px] xl:text-[68px]">
+    Dr. Moitrayee
+    <br />
+    <span className="font-normal text-blue-800">
+      Das
+    </span>
+  </h2>
+
+  <p className="mt-8 text-xs font-medium uppercase tracking-[0.22em] text-blue-700">
+    Assistant Prof., FLAME University
+  </p>
 
               <p className="mt-7 max-w-[620px] text-[15px] leading-8 text-slate-600">
-                Workplace mental health, sleep &amp; well-being, and
-                organizational psychology through research, teaching, and
-                100+ outreach sessions across India.
+                Dr. Das is an Assistant Professor of Psychology at FLAME University, Pune. She received her PhD & M.Phil. in Management and Labour Studies from the Tata Institute of Social Sciences (TISS), Mumbai and has also completed an Executive Post Graduate Diploma in Analytics from the same. Moitrayee currently teaches Industrial and Cross-Cultural Psychology at FLAME.
+                <br/>She loves to pursue different courses and has completed 5 Diploma and 21 Certificate courses from different institutes.
               </p>
 
               {/* Statistics */}
@@ -100,13 +101,13 @@ export default function HomePanel({ onNavigate }: HomePanelProps) {  return (
                   <p className="mt-2 text-[10px] font-medium uppercase leading-5 tracking-[0.14em] text-slate-500">
                     Co-authored
                     <br />
-                    Works
+                    Research Works
                   </p>
                 </div>
 
                 <div className="border-l border-slate-200 px-5 py-6">
                   <p className="text-[30px] font-semibold tracking-tight text-slate-900">
-                    150+
+                    200+
                   </p>
 
                   <p className="mt-2 text-[10px] font-medium uppercase leading-5 tracking-[0.14em] text-slate-500">
@@ -146,7 +147,7 @@ export default function HomePanel({ onNavigate }: HomePanelProps) {  return (
             {/* =====================================================
                 RIGHT: AWARDS CARD
             ===================================================== */}
-            <aside className="order-3 lg:flex lg:items-center">
+            <aside className="order-3 lg:flex lg:items-center lg:-mt-65">
               <div className="w-full rounded-xl border border-slate-200 bg-white px-7 py-8 shadow-[0_4px_20px_rgba(15,23,42,0.025)] md:px-8">
                 
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-blue-700">
@@ -352,18 +353,44 @@ export default function HomePanel({ onNavigate }: HomePanelProps) {  return (
 
         <div className="mt-6 space-y-3">
           {/* LinkedIn */}
-          <a
-            href="#"
-            className="flex items-center gap-3 text-base text-slate-300 transition-colors hover:text-white"
-          >
-            <span className="flex h-10 w-10 items-center justify-center border border-slate-700 text-sm font-semibold transition-colors hover:border-blue-700 hover:text-blue-400">
-              in
-            </span>
+<a
+  href="https://www.linkedin.com/in/dr-moitrayee-das-she-her-25ba5b55/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-3 text-base text-slate-300 transition-colors hover:text-white"
+>
+  <span className="flex h-10 w-10 items-center justify-center border border-slate-700 transition-colors hover:border-blue-700">
+    <BriefcaseBusiness
+      size={18}
+      strokeWidth={1.8}
+      className="text-slate-300 transition-colors hover:text-blue-400"
+    />
+  </span>
 
-            <span>LinkedIn</span>
+  <span>LinkedIn</span>
 
-            <span className="ml-auto text-slate-600">↗</span>
-          </a>
+  <span className="ml-auto text-slate-600">↗</span>
+</a>
+
+{/* FLAME University */}
+<a
+  href="https://www.flame.edu.in/faculty/moitrayee-das"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-3 text-base text-slate-300 transition-colors hover:text-white"
+>
+  <span className="flex h-10 w-10 items-center justify-center border border-slate-700 transition-colors hover:border-blue-700">
+    <Landmark
+      size={18}
+      strokeWidth={1.8}
+      className="text-slate-300 transition-colors hover:text-blue-400"
+    />
+  </span>
+
+  <span>FLAME University</span>
+
+  <span className="ml-auto text-slate-600">↗</span>
+</a>
 
           {/* CV */}
           <a

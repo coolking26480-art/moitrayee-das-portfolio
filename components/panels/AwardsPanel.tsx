@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+
+import { useEffect, useRef, useState } from "react";
 
 const awards = [
   {
@@ -9,8 +10,7 @@ const awards = [
   },
   {
     title: "Teaching Award",
-    description:
-      "FLAME University, Pune (2024–2025).",
+    description: "FLAME University, Pune (2024–2025).",
   },
   {
     title: "Service Award",
@@ -19,18 +19,16 @@ const awards = [
   },
   {
     title: "Teaching Award",
-    description:
-      "FLAME University, Pune (2023–2024).",
+    description: "FLAME University, Pune (2023–2024).",
   },
   {
     title: "Best Paper Award",
     description:
-      'Best Paper Award in the Indian Management, Culture, and Knowledge Systems track and the overall Best Paper Award at the 9th INDAM Conference on Creating Impact through Responsible Leadership and Sustainable Business Practices (2024).',
+      "Best Paper Award in the Indian Management, Culture, and Knowledge Systems track and the overall Best Paper Award at the 9th INDAM Conference on Creating Impact through Responsible Leadership and Sustainable Business Practices (2024).",
   },
   {
     title: "Teaching Award",
-    description:
-      "FLAME University, Pune (2022–2023).",
+    description: "FLAME University, Pune (2022–2023).",
   },
   {
     title: "Outstanding Student Award",
@@ -40,18 +38,59 @@ const awards = [
 ];
 
 const awardImages = [
-  "/awards/award-1.jpg",
-  "/awards/award-2.jpg",
-  "/awards/award-3.jpg",
-  "/awards/award-4.jpg",
-  "/awards/award-5.jpg",
-  "/awards/award-6.jpg",
+  "/images/awards/A (1).jpg",
+  "/images/awards/A (4).jpg",
+  "/images/awards/A (2).jpg",
+  "/images/awards/A (5).jpg",
+  "/images/awards/A (3).jpg",
+  "/images/awards/A (6).jpg",
+  "/images/awards/A (1).jpeg",
+  "/images/awards/A (2).jpeg",
 ];
 
 export default function AwardsPanel() {
-    const [openAward, setOpenAward] = useState<number | null>(null);
-   return (
-    <div className="min-h-full bg-white px-8 pb-18 pt-28 md:px-12 lg:px-16">
+  const [openAward, setOpenAward] = useState<number | null>(null);
+
+  // This MUST be here, outside the return()
+  const galleryRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll
+  useEffect(() => {
+    const gallery = galleryRef.current;
+
+    if (!gallery) return;
+
+    let animationFrame: number;
+
+    const speed = 0.5;
+
+    const scroll = () => {
+      if (!gallery) return;
+
+      gallery.scrollTop += speed;
+
+      if (
+        gallery.scrollTop + gallery.clientHeight >=
+        gallery.scrollHeight - 1
+      ) {
+        gallery.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+
+      animationFrame = requestAnimationFrame(scroll);
+    };
+
+    animationFrame = requestAnimationFrame(scroll);
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+    };
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white px-8 pb-18 pt-28 md:px-12 lg:px-16">
       <div className="mx-auto max-w-6xl">
         <header className="mb-12">
           <p className="mb-3 text-[14px] font-medium uppercase tracking-[0.2em] text-blue-700">
@@ -64,6 +103,7 @@ export default function AwardsPanel() {
         </header>
 
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[60%_40%]">
+
           {/* Awards */}
           <section>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
@@ -72,87 +112,121 @@ export default function AwardsPanel() {
 
                 return (
                   <article
-  key={`${award.title}-${index}`}
-  className={`border border-blue-200 transition-colors ${
-    openAward === index ? "border-blue-700" : "hover:border-blue-700"
-  }`}
->
-  <button
-    type="button"
-    onClick={() =>
-      setOpenAward((current) =>
-        current === index ? null : index,
-      )
-    }
-    aria-expanded={openAward === index}
-    className="flex w-full items-center gap-4 p-5 text-left"
-  >
-    <span
-      className={`w-7 shrink-0 text-xs font-medium tracking-[0.12em] ${
-        openAward === index ? "text-blue-700" : "text-slate-400"
-      }`}
-    >
-      {number}
-    </span>
+                    key={`${award.title}-${index}`}
+                    className={`border border-blue-200 transition-colors ${
+                      openAward === index
+                        ? "border-blue-700"
+                        : "hover:border-blue-700"
+                    }`}
+                  >
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setOpenAward((current) =>
+                          current === index ? null : index
+                        )
+                      }
+                      aria-expanded={openAward === index}
+                      className="flex w-full items-center gap-4 p-5 text-left"
+                    >
+                      <span
+                        className={`w-7 shrink-0 text-xs font-medium tracking-[0.12em] ${
+                          openAward === index
+                            ? "text-blue-700"
+                            : "text-slate-400"
+                        }`}
+                      >
+                        {number}
+                      </span>
 
-    <span
-      className={`text-[18px] font-medium leading-6 tracking-tight ${
-        openAward === index ? "text-blue-700" : "text-slate-900"
-      }`}
-    >
-      {award.title}
-    </span>
+                      <span
+                        className={`text-[18px] font-medium leading-6 tracking-tight ${
+                          openAward === index
+                            ? "text-blue-700"
+                            : "text-slate-900"
+                        }`}
+                      >
+                        {award.title}
+                      </span>
 
-    <span
-      aria-hidden="true"
-      className={`ml-auto text-[24px] font-light leading-none text-slate-400 transition-transform duration-300 ${
-        openAward === index ? "rotate-45" : ""
-      }`}
-    >
-      +
-    </span>
-  </button>
+                      <span
+                        aria-hidden="true"
+                        className={`ml-auto text-[24px] font-light leading-none text-slate-400 transition-transform duration-300 ${
+                          openAward === index ? "rotate-45" : ""
+                        }`}
+                      >
+                        +
+                      </span>
+                    </button>
 
-  <div
-    className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
-      openAward === index
-        ? "grid-rows-[1fr]"
-        : "grid-rows-[0fr]"
-    }`}
-  >
-    <div className="overflow-hidden">
-      <p className="px-5 pb-5 pl-16 text-[13px] leading-6 text-slate-600">
-        {award.description}
-      </p>
-    </div>
-  </div>
-</article>
+                    <div
+                      className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                        openAward === index
+                          ? "grid-rows-[1fr]"
+                          : "grid-rows-[0fr]"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <p className="px-5 pb-5 pl-16 text-[13px] leading-6 text-slate-600">
+                          {award.description}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
                 );
               })}
             </div>
           </section>
 
-          {/* Photographs */}
-          <section>
-            <div className="grid grid-cols-2 gap-3">
-              {awardImages.map((src, index) => (
-                <div
-                  key={src}
-                  className={`overflow-hidden border border-slate-200 bg-slate-50 ${
-                    index === 0
-                      ? "col-span-2 aspect-[16/10]"
-                      : "aspect-[4/3]"
-                  }`}
-                >
-                  <img
-                    src={src}
-                    alt={`Award recognition ${index + 1}`}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
+          {/* Vertical Image Gallery */}
+          {/* Desktop: Vertical Auto-Scrolling Gallery */}
+<aside className="hidden lg:block -mt-49 h-full min-h-[700px]">
+  <div
+  ref={galleryRef}
+  className="hide-scrollbar h-[calc(100vh-80px)] min-h-[100px] overflow-y-auto rounded-xl bg-slate-100 p-4"
+>
+    <div className="space-y-4">
+      {awardImages.map((src, index) => (
+        <div
+          key={src}
+          className="overflow-hidden rounded-lg bg-white"
+        >
+          <img
+            src={src}
+            alt={`Award recognition ${index + 1}`}
+            className="block h-auto w-full"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</aside>
+
+{/* Mobile: Original Collage */}
+<div className="columns-2 gap-3 lg:hidden">
+  {[
+    "/images/awards/A (1).jpg",
+    "/images/awards/A (4).jpg",
+    "/images/awards/A (2).jpg",
+    "/images/awards/A (5).jpg",
+    "/images/awards/A (3).jpg",
+    "/images/awards/A (6).jpg",
+    "/images/awards/A (1).jpeg",
+    "/images/awards/A (2).jpeg",
+  ].map((src, index) => (
+    <div
+      key={src}
+      className="mb-3 break-inside-avoid overflow-hidden rounded-md"
+    >
+      <img
+        src={src}
+        alt={`Award recognition ${index + 1}`}
+        className="block h-auto w-full"
+      />
+    </div>
+  ))}
+</div>
+
         </div>
       </div>
     </div>
