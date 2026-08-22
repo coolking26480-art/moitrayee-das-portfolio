@@ -178,7 +178,7 @@ export default function InvitedTalksPanel() {
                 {/* Vertical video */}
                 <div className="overflow-hidden bg-black">
                   <video
-                    src="public\videos\Talk.mp4"
+                    src="videos\Talk.mp4"
                     controls
                     playsInline
                     className="h-full w-full object-cover"
