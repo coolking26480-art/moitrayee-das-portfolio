@@ -17,11 +17,13 @@ export default function HorizontalStage({
   onActivePanelChange,
 }: HorizontalStageProps) {
   const stageRef = useRef<HTMLDivElement>(null);
+  const isNavigatingRef = useRef(false);
+  const navigationTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     const stage = stageRef.current;
 
-    if (!stage || !onActivePanelChange) {
+    if (!stage) {
       return;
     }
 
@@ -33,6 +35,28 @@ export default function HorizontalStage({
       return;
     }
 
+    /*
+     * If the URL already contains a panel hash,
+     * move to that panel when the page loads.
+     */
+    const initialHash = window.location.hash.replace("#", "");
+
+    if (initialHash) {
+      const initialPanel = document.getElementById(initialHash);
+
+      if (initialPanel) {
+        window.setTimeout(() => {
+          initialPanel.scrollIntoView({
+            behavior: "instant",
+            block: "nearest",
+            inline: "start",
+          });
+
+          initialPanel.scrollTop = 0;
+        }, 100);
+      }
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         const visiblePanel = entries
@@ -41,11 +65,41 @@ export default function HorizontalStage({
             (a, b) => b.intersectionRatio - a.intersectionRatio,
           )[0];
 
-        if (visiblePanel) {
-          const panelId = (visiblePanel.target as HTMLElement).id;
+        if (!visiblePanel) {
+          return;
+        }
 
-          if (panelId) {
-            onActivePanelChange(panelId);
+        const panelId = (visiblePanel.target as HTMLElement).id;
+
+        if (!panelId) {
+          return;
+        }
+
+        /*
+         * Update the active navigation state.
+         */
+        onActivePanelChange?.(panelId);
+
+        /*
+         * Update the browser URL whenever the visible
+         * panel changes.
+         *
+         * This works for:
+         * - mouse wheel horizontal scrolling
+         * - trackpad scrolling
+         * - dragging the scrollbar
+         * - touch/swipe navigation
+         * - navigation buttons
+         */
+        if (!isNavigatingRef.current) {
+          const currentHash = window.location.hash.replace("#", "");
+
+          if (currentHash !== panelId) {
+            window.history.replaceState(
+              null,
+              "",
+              `#${panelId}`,
+            );
           }
         }
       },
@@ -57,8 +111,64 @@ export default function HorizontalStage({
 
     panels.forEach((panel) => observer.observe(panel));
 
+    /*
+     * Detect when the user is manually scrolling.
+     */
+    const handleScroll = () => {
+      isNavigatingRef.current = false;
+    };
+
+    stage.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    /*
+     * Listen for browser back/forward navigation.
+     */
+    const handlePopState = () => {
+      const hash = window.location.hash.replace("#", "");
+
+      if (!hash) {
+        return;
+      }
+
+      const panel = document.getElementById(hash);
+
+      if (!panel) {
+        return;
+      }
+
+      isNavigatingRef.current = true;
+
+      panel.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "start",
+      });
+
+      panel.scrollTop = 0;
+
+      if (navigationTimeoutRef.current) {
+        window.clearTimeout(navigationTimeoutRef.current);
+      }
+
+      navigationTimeoutRef.current = window.setTimeout(() => {
+        isNavigatingRef.current = false;
+      }, 500);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
     return () => {
       observer.disconnect();
+
+      stage.removeEventListener("scroll", handleScroll);
+
+      window.removeEventListener("popstate", handlePopState);
+
+      if (navigationTimeoutRef.current) {
+        window.clearTimeout(navigationTimeoutRef.current);
+      }
     };
   }, [onActivePanelChange]);
 

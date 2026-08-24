@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Navigation from "../components/Navigation";
 import HorizontalStage from "../components/STAGE/HorizontalStage";
@@ -36,7 +36,77 @@ export default function Home() {
     }, 350);
 
     setActivePanel(target);
+
+    // Update the URL without reloading the page
+    window.history.pushState(null, "", `#${target}`);
   };
+
+  /*
+   * Open the correct panel when the page is loaded
+   * with a hash in the URL.
+   *
+   * Example:
+   * yoursite.com/#awards
+   */
+  useEffect(() => {
+    const target = window.location.hash.replace("#", "");
+
+    if (!target) {
+      return;
+    }
+
+    const element = document.getElementById(target);
+
+    if (!element) {
+      return;
+    }
+
+    // Small delay so the horizontal stage has mounted first
+    window.setTimeout(() => {
+      element.scrollIntoView({
+        behavior: "instant",
+        block: "nearest",
+        inline: "start",
+      });
+
+      element.scrollTop = 0;
+      setActivePanel(target);
+    }, 100);
+  }, []);
+
+  /*
+   * Handle browser back/forward buttons.
+   */
+  useEffect(() => {
+    const handleHashChange = () => {
+      const target = window.location.hash.replace("#", "");
+
+      if (!target) {
+        return;
+      }
+
+      const element = document.getElementById(target);
+
+      if (!element) {
+        return;
+      }
+
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "start",
+      });
+
+      element.scrollTop = 0;
+      setActivePanel(target);
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
 
   const handleContact = () => {
     const homePanel = document.getElementById("home");
@@ -60,8 +130,10 @@ export default function Home() {
 
       setActivePanel("home");
 
+      window.history.pushState(null, "", "#home");
+
       /*
-       * Wait for the horizontal movement to finish,
+       * Wait for horizontal movement to finish,
        * then move to the footer.
        */
       window.setTimeout(() => {
@@ -102,9 +174,9 @@ export default function Home() {
 
       <HorizontalStage onActivePanelChange={setActivePanel}>
         <Panel id="home">
-          <HomePanel onNavigate={handleNavigation}/>
+          <HomePanel onNavigate={handleNavigation} />
         </Panel>
-        
+
         <Panel id="qualifications">
           <AcademicQualificationsPanel />
         </Panel>
@@ -122,12 +194,12 @@ export default function Home() {
         </Panel>
 
         <Panel id="awards">
-        <AwardsPanel />
+          <AwardsPanel />
         </Panel>
 
         <Panel id="invited-talks">
-         <InvitedTalksPanel />
-         </Panel>
+          <InvitedTalksPanel />
+        </Panel>
       </HorizontalStage>
     </>
   );
