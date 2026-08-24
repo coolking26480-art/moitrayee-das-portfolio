@@ -67,7 +67,7 @@ export default function InvitedTalksPanel() {
   const [openYear, setOpenYear] = useState<string | null>("2026");
 
   return (
-  <div className="min-h-full bg-white px-8 pb-18 pt-28 md:px-12 lg:px-16">
+  <div className="min-h-full bg-white px-8 pb-18 pt-30 md:px-12 lg:px-16">
     <div className="mx-auto max-w-6xl">
 
       {/* TOP SECTION — 60 / 40 */}

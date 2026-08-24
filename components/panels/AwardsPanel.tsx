@@ -90,7 +90,7 @@ export default function AwardsPanel() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white px-8 pb-18 pt-28 md:px-12 lg:px-16">
+    <div className="min-h-screen bg-white px-8 pb-18 pt-31 md:px-12 lg:px-16">
       <div className="mx-auto max-w-6xl">
         <header className="mb-12">
           <p className="mb-3 text-[14px] font-medium uppercase tracking-[0.2em] text-blue-700">

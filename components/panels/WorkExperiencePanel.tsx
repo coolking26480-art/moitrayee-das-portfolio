@@ -84,7 +84,7 @@ export default function WorkExperiencePanel() {
   };
 
   return (
-    <div className="min-h-full bg-white px-8 pb-18 pt-28 md:px-12 lg:px-16">
+    <div className="min-h-full bg-white px-8 pb-18 pt-32 md:px-12 lg:px-16">
       <div className="mx-auto max-w-5xl">
         {/* Panel heading */}
         <header className="mb-12">
