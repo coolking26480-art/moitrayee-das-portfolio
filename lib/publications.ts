@@ -2,6 +2,12 @@ export interface Publication {
   citation: string;
   url?: string;
   linkLabel?: string;
+
+  // Conference-specific fields
+  date?: string;
+  authors?: string;
+  type?: string;
+  venue?: string;
 }
 
 export interface PublicationCategory {
@@ -216,6 +222,463 @@ publications: [
           "Shah, M., & Das, M. (Accepted, unpublished manuscript). Present but muted: AI monitoring and burnout in remote work environments. In Practical applications of industrial and organizational psychology: Multidisciplinary case studies from the Global South. Routledge.",
       },
     ],
+  },
+
+  {
+  id: "conference-presentations",
+  title: "Conference Presentations",
+  publications: [
+  {
+    date: "July 21, 2026",
+    citation:
+      "Evaluating the perceived utility of AI-tools among university students: A cross-sectional study",
+    authors: "Ratnaparke, S. A. R. V., & Das, M.",
+    type: "Upcoming conference presentation",
+    venue:
+      "International Conference 2026 at Woxsen University, Hyderabad, India.",
+  },
+  {
+    date: "December 10–12, 2026",
+    citation:
+      "A Normative Policy of Gratitude in Times of Uncertainty, Frustration, and Sorrow",
+    authors: "Ratnaparke, S. A. R. V., & Das, M.",
+    type: "Upcoming conference",
+    venue:
+      "GratCon 2026; A global conference, Christ University, Bengaluru, India.",
+  },
+  {
+    date: "December 10–12, 2026",
+    citation:
+      "Developmental Neurobiology of Gratitude: Role of Early Experiences in Shaping Capacity for Gratitude",
+    authors: "Shah, M., & Das, M.",
+    type: "Upcoming conference",
+    venue:
+      "GratCon 2026; A global conference, Christ University, Bengaluru, India.",
+  },
+  {
+    date: "October 26–28, 2026",
+    citation:
+      "Bridging the bot gap: How generations are adapting to generative AI",
+    authors: "Shah, M., & Das, M.",
+    type: "Upcoming conference presentation",
+    venue:
+      "11th International Conference of the Indian Academy of Health Psychology (ICIAHP–2026), Thavorn Palm Beach Resort, Phuket, Thailand.",
+  },
+  {
+    date: "September 18–19, 2026",
+    citation:
+      "AI mediated work systems: A review of psychological consequences, workplace wellbeing, and managerial decision making",
+    authors: "Pandey, A., Shah, M., & Das, M.",
+    type: "Upcoming conference presentation",
+    venue:
+      "IMC International Research Conference (IMC-IRC) 2026, Indian Institute of Management Lucknow, Noida Campus, Delhi NCR, India.",
+  },
+  {
+    date: "September 18–19, 2026",
+    citation: "AI paradox in management education: Capability or dependency?",
+    authors: "Shah, M., & Das, M.",
+    type: "Upcoming conference presentation",
+    venue:
+      "IMC International Research Conference (IMC-IRC) 2026, Indian Institute of Management Lucknow, Noida Campus, Delhi NCR, India.",
+  },
+  {
+    date: "December 10–11, 2026",
+    citation:
+      "Developmental Neurobiology of Gratitude: Role of Early Experiences in Shaping Capacity for Gratitude",
+    authors: "Shah, M. & Das, M.",
+    type: "Upcoming conference presentation",
+    venue:
+      "The Global Conference on Developing Grateful Communities 2026 (GRATCon), Christ University, Bangalore.",
+  },
+  {
+    date: "March 27–28, 2026",
+    citation:
+      "Who’s calling the shots?: Is algorithmic decision-making shaping organizational values and psychological safety",
+    authors: "Mehra, M., & Das, M.",
+    type: "Oral presentation",
+    venue:
+      "National Conference of Psychology 2026: Bridging Theory and Practice: Psychology at the Workplace, FLAME University, Pune, India.",
+  },
+  {
+    date: "March 27–28, 2026",
+    citation: "Awws of the paws: The case of pet-friendly workplaces",
+    authors: "Mehra, M., & Das, M.",
+    type: "Poster presentation",
+    venue:
+      "National Conference of Psychology 2026: Bridging Theory and Practice: Psychology at the Workplace, FLAME University, Pune, India.",
+  },
+  {
+    date: "March 14–15, 2026",
+    citation:
+      "The ontological misplacement of self: From behavioral regulation to ontological discernment in digital well-being",
+    authors: "Chaudhari, S. R., & Das, M.",
+    type: "Oral presentation",
+    venue:
+      "13th International Conference on Spirituality: A Tested Paradigm for Global Well-Being, Sustainability and Digital Mindfulness, School of Management Sciences, Varanasi, India.",
+  },
+  {
+    date: "March 14–15, 2026",
+    citation:
+      "A systematic review of how interfaith harmony reduces prejudice through collective empathy in pursuit for global peace",
+    authors: "Abhijeet, S., & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "13th International Conference on Spirituality: A Tested Paradigm for Global Well-Being, Sustainability and Digital Mindfulness, School of Management Sciences, Varanasi, India.",
+  },
+  {
+    date: "March 14–15, 2026",
+    citation:
+      "Belief or Buffer? Exploring The Role of Intrinsic and Extrinsic Spirituality in Burnout",
+    authors: "Shah, M. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "13th International Conference on Spirituality: A Tested Paradigm for Global Well-Being, Sustainability, and Digital Mindfulness, School of Management Sciences, Varanasi.",
+  },
+
+  {
+    date: "February 17–20, 2025",
+    citation: "The impact of dating apps on self-esteem and body image",
+    authors: "Mehra, S., Das, M., Kotbagi, G., & Patki, S.",
+    type: "Oral presentation",
+    venue:
+      "34th Annual Convention of the National Academy of Psychology (NAOP), CHRIST (Deemed to be University), Delhi NCR Campus, India.",
+  },
+  {
+    date: "July 2025",
+    citation:
+      "Impact of modern dating trends in dating apps on self-esteem and body image",
+    authors: "Mehra, S., Das, M., Kotbagi, G., & Patki, S.",
+    type: "Oral presentation",
+    venue:
+      "10th International Conference on Behavioural Addictions (ICBA), Nantes, France.",
+  },
+  {
+    date: "July 10–12, 2025",
+    citation: "Polycultural identity and globalization threat: An Indian perspective",
+    authors: "Ramanathan, P., Siddiqui, R., & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "16th Biennial Conference of the Asian Association of Social Psychology (AASP 2025), Monash University Malaysia, Kuala Lumpur, Malaysia.",
+  },
+  {
+    date: "February 17–20, 2025",
+    citation:
+      "Therapy for Therapists: Mental Health Challenges and Help-Seeking Behaviours Among Psychologists in India",
+    authors: "Vaid, A., Belavadi, S. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "34th Annual Convention of the National Academy of Psychology (NAOP) in collaboration with CHRIST (Deemed to be University).",
+  },
+  {
+    date: "February 17–20, 2025",
+    citation:
+      "Political Apathy or Activism: Understanding Gen Z's Trust in Political Institutions and its Effect on Voter Turnout in India",
+    authors: "Khanna, P. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "34th Annual Convention of the National Academy of Psychology (NAOP) in collaboration with CHRIST (Deemed to be University).",
+  },
+  {
+    date: "February 17–20, 2025",
+    citation:
+      "Sacrifice and Identity: Exploring Martyrdom in Historical and Contemporary Contexts",
+    authors: "Deshmukh, I. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "34th Annual Convention of the National Academy of Psychology (NAOP) in collaboration with CHRIST (Deemed to be University).",
+  },
+  {
+    date: "February 22–23, 2025",
+    citation: "The Impact of Ghosting on Self-Esteem and Body Image Issues",
+    authors: "Mehra, S., Patki, S. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "International Conference of Innovation, Sustainability and Applied Sciences (ICISAS 2025), Curtin University Dubai.",
+  },
+  {
+    date: "February 22–23, 2025",
+    citation:
+      "The Burden of Healing: Understanding Psychologists Mental Health In India",
+    authors: "Vaid, A., Belavadi, S. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "International Conference of Innovation, Sustainability and Applied Sciences (ICISAS 2025), Curtin University Dubai.",
+  },
+  {
+    date: "March 28–29, 2025",
+    citation:
+      "Exploring the Nexus between India's Economic Climate and Inter-cultural perspectives on Happiness",
+    authors: "Ratnaparke, S.A. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "3rd Annual Conference of the National Positive Psychology Association (NPPA).",
+  },
+  {
+    date: "August 6–8, 2025",
+    citation:
+      "The ‘Empty Stadium’ Problem: Why Fancy Buildings Don’t Fix Boring Classes",
+    authors: "Shah, K. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "International Conference on Organisational Culture, Work Values and Organisational Performance in Higher Education Institutions (ICOC ‘25), Christ University, Bangalore.",
+  },
+  {
+    date: "August 6–8, 2025",
+    citation:
+      "Power, Pedagogy, Pressure: A Comparative Review On Student Faculty Relations",
+    authors: "Shah, M. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "International Conference on Organisational Culture, Work Values and Organisational Performance in Higher Education Institutions (ICOC ’25), Christ University, Bangalore.",
+  },
+
+  {
+    date: "2024",
+    citation: "We Only Rent to Families: Singlehood and Rental Housing",
+    authors: "Tripathi, A. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "7th Annual South Asia Conference at Dublin City University, Dublin, Ireland.",
+  },
+  {
+    date: "August 9, 2024",
+    citation: "Understanding the Evaluation Systems for Mental Health Applications",
+    authors: "Grover, M. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "Synod 3.0 Conference held at Surana Educational Institutions in collaboration with Cairnmillar Institute.",
+  },
+  {
+    date: "August 9, 2024",
+    citation:
+      "Enhancing Adolescent Mental Health: How AI Companions Complement, but Don't Replace Human Therapists",
+    authors: "Sam, T. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "Synod 3.0 Conference held at Surana Educational Institutions in collaboration with Cairnmillar Institute.",
+  },
+  {
+    date: "August 9, 2024",
+    citation:
+      "Technological Adaptations in Language for Online Psychotherapy: Enhancing Accessibility and Effectiveness",
+    authors: "Vaid, A., Bansal, D. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "Synod 3.0 Conference held at Surana Educational Institutions in collaboration with Cairnmillar Institute.",
+  },
+  {
+    date: "September 17–19, 2024",
+    citation:
+      "Uncovering the Structural Barriers to Employment and Mental Well-Being for Indian Graduates",
+    authors: "Khanna, P. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "International Conference of Holistic Health: Exploring Interconnected Realms of Well-Being (HHERW2024), SGT University.",
+  },
+  {
+    date: "September 17–19, 2024",
+    citation:
+      "Unseen Scars: Understanding Secondary Trauma from Media Exposure to Violence and Disasters",
+    authors: "Deshmukh, I. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "International Conference of Holistic Health: Exploring Interconnected Realms of Well-Being (HHERW2024), SGT University.",
+  },
+  {
+    date: "September 17–19, 2024",
+    citation: "How Diversity and Inclusivity Differ and Why Both Matter",
+    authors: "Arora, T. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "International Conference of Holistic Health: Exploring Interconnected Realms of Well-Being (HHERW2024), SGT University.",
+  },
+  {
+    date: "2024",
+    citation:
+      "Women's Bodies and Minds: A Qualitative Analysis of Psychological Implications of Gendered Inequities in Indian Health Care Settings",
+    authors: "Smitha, D. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "International Conference of Social Sciences (ICSS), Amity University.",
+  },
+  {
+    date: "2024",
+    citation:
+      "The Impact of Sleep Apnea and Daytime Sleepiness on the Employee Engagement of the IT sector employees in India",
+    authors: "Dhillon, S. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "Bombay Psychological Association (BPA) Trust's 31st Annual International Multidisciplinary Conference.",
+  },
+  {
+    date: "2024",
+    citation:
+      "Psychological Responses to Gender-based Violence in Indian Healthcare Settings",
+    authors: "Smitha, D. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "Bombay Psychological Association (BPA) Trust's 31st Annual International Multidisciplinary Conference.",
+  },
+  {
+    date: "2024",
+    citation:
+      "The Role of CSR, Corporate Governance and Sustainable Development in SMEs: Exploring Interconnection and Benefits",
+    authors: "Thombare, N. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "9th INDAM Conference on Creating Impact through Responsible Leadership & Sustainable Business Practices, Goa Institute of Management.",
+  },
+
+  {
+    date: "2023",
+    citation: "Addressing Job Burnout in Culturally Diverse Workforces",
+    authors: "Dedhia, A. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "International Conference of Innovation, Sustainability and Applied Sciences (ICISAS), Curtin University, Dubai.",
+  },
+  {
+    date: "2023",
+    citation: "Chronic Illnesses and Mental Wellbeing: Current Trends and Practices",
+    authors: "Zaina, A. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "International Conference of Indian Academy of Health Psychology (ICIAHP).",
+  },
+  {
+    date: "2023",
+    citation:
+      "The Implications of Pain Catastrophizing: A Cognitive Therapy-Based Approach",
+    authors: "George, L. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "International Conference of Indian Academy of Health Psychology (ICIAHP).",
+  },
+  {
+    date: "November 2023",
+    citation: "Navigating Coping Mechanisms in Culturally Diverse Workforce",
+    authors: "Dedhia, A. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "International Conference of Indian Academy of Health Psychology (ICIAHP).",
+  },
+  {
+    date: "August 2023",
+    citation:
+      "Job Burnout and Coping Mechanisms among Culturally Diverse Workforce",
+    authors: "Dedhia, A. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "National Seminar on Positive Psychology for Holistic Development.",
+  },
+  {
+    date: "December 2023",
+    citation: "Does Resilience building improve Quality of Life",
+    authors: "Mundhra, C. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "National Seminar on Positive Psychology for Holistic Development, 2023.",
+  },
+  {
+    date: "August 2023",
+    citation:
+      "The Role of Self Compassion in Fostering Resilience and Recovery from Stress among Youth",
+    authors: "Prasad, S., Swaika, D. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "National Seminar on Positive Psychology for Holistic Development.",
+  },
+  {
+    date: "2023",
+    citation:
+      "Exploring the Experiences of LGBTQIA + Youth in India: a Descriptive Content Review",
+    authors: "Desai, V. Das, M.",
+    type: "Conference presentation",
+    venue:
+      "Virtual Asia-Pacific Mental Health Symposium (VAMHS).",
+  },
+  {
+    date: "2023",
+    citation:
+      "Pain Perception and Cancer: A Review on Current Day Therapeutic Techniques",
+    authors: "George, L. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "Virtual Asia-Pacific Mental Health Symposium (VAMHS), 2023.",
+  },
+
+  {
+    date: "2022",
+    citation: "Case study on 'Bandhan Bank'",
+    authors: "Choudhury, S., Palo, S & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "International Conference on Case Development (ICCD), ICFAI Tripura.",
+  },
+  {
+    date: "2022",
+    citation: "Security in the Age of Flexibility: The Case of Bandhan Bank",
+    authors: "Choudhury, S., Palo, S & Das, M.",
+    type: "Conference presentation",
+    venue: "INDAM 2023 Conference at SBM-NMIMS Mumbai.",
+  },
+  {
+    date: "2022",
+    citation:
+      'We Rent Only to Families": Rental Housing and Singlehood in Indian Cities',
+    authors: "Tripathi, A. & Das, M.",
+    type: "Conference presentation",
+    venue: "Web Conference on Law and Singlehood in India.",
+  },
+  {
+    date: "2022",
+    citation:
+      "Unpacking the 'Bihariness': Reflections on Indian Predator: The Butcher of Delhi",
+    authors: "Tripathi, A. & Das, M.",
+    type: "Conference presentation",
+    venue:
+      "International Conference on Migrant Workers, Cultural (Re) Production, and the Culture Industry in South Asia, Tezpur University.",
+  },
+
+  {
+    date: "2020",
+    citation: "Poor Sleep: An Epidemic keeping Indians awake",
+    authors: "Das, M.",
+    type: "NHRD Event",
+    venue: "NHRD Event, Mumbai Chapter.",
+  },
+  {
+    date: "2019",
+    citation:
+      "Perfectionist? You don’t need to sleep: An interplay of Daytime Sleepiness and Task Performance",
+    authors: "Das, M.",
+    type: "Doctoral colloquium presentation",
+    venue: "13th Annual ISDSI Conference.",
+  },
+  {
+    date: "2018",
+    citation:
+      "Understanding the sleep inadequacy problem among Research Students",
+    authors: "Das, M.",
+    type: "Doctoral colloquium presentation",
+    venue: "Management Doctoral Colloquium, IIT Kharagpur.",
+  },
+  {
+    date: "2017",
+    citation:
+      "Understanding the sleep inadequacy among corporate professionals",
+    authors: "Das, M.",
+    type: "Conference presentation",
+    venue: "INDAM Conference, IIM Indore.",
+  },
+  {
+    date: "2017",
+    citation: "Poster Presentation on the Poor Sleeping Patterns of the youth",
+    authors: "Das, M.",
+    type: "Poster presentation",
+    venue: "Indian Society for Sleep Research (ISSR).",
+  },
+],
   },
   {
     id: "opinion-editorials",

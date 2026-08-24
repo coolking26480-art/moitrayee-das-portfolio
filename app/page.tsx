@@ -8,7 +8,6 @@ import Panel from "../components/ui/Panel";
 import HomePanel from "../components/panels/HomePanel";
 import AcademicQualificationsPanel from "../components/panels/AcademicQualificationsPanel";
 import PublicationsPanel from "../components/panels/PublicationsPanel";
-import ConferencesPanel from "../components/panels/ConferencesPanel";
 import WorkExperiencePanel from "../components/panels/WorkExperiencePanel";
 import AwardsPanel from "../components/panels/AwardsPanel";
 import InvitedTalksPanel from "../components/panels/InvitedTalksPanel";
@@ -189,9 +188,6 @@ export default function Home() {
           <PublicationsPanel />
         </Panel>
 
-        <Panel id="conferences">
-          <ConferencesPanel />
-        </Panel>
 
         <Panel id="awards">
           <AwardsPanel />

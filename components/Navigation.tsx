@@ -26,10 +26,6 @@ const navigationItems = [
     target: "publications",
   },
   {
-    label: "Conferences",
-    target: "conferences",
-  },
-  {
     label: "Awards",
     target: "awards",
   },
